@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Emergency
+namespace Emergency.BE
 {
-    class CallCenter
-    {
-    }
+    public enum Gender { Male, Female}
 }
