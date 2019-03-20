@@ -71,6 +71,7 @@
   <ItemGroup>
     <Compile Include="model\AnalystModel.cs" />
     <Compile Include="model\CallCentersModel.cs" />
+    <Compile Include="model\ReportsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +98,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Commands\" />
     <Folder Include="view model\" />
   </ItemGroup>
   <ItemGroup>
