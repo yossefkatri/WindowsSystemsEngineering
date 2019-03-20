@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Emergency.BL.BE")]
+[assembly: AssemblyTitle("Emergency.BE")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("Emergency.BL.BE")]
+[assembly: AssemblyProduct("Emergency.BE")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ca7cb225-b114-4f40-a971-756c38b6b8ba")]
+[assembly: Guid("a0db61a5-41e1-454e-9dc5-35ab067e1193")]
 
 // Version information for an assembly consists of the following four values:
 //

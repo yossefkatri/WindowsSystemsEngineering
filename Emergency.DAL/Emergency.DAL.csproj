@@ -44,11 +44,5 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Emergency.BL.BE\Emergency.BE.csproj">
-      <Project>{ca7cb225-b114-4f40-a971-756c38b6b8ba}</Project>
-      <Name>Emergency.BE</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

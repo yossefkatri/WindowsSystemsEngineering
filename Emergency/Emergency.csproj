@@ -102,8 +102,8 @@
     <Folder Include="view model\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Emergency.BL.BE\Emergency.BE.csproj">
-      <Project>{ca7cb225-b114-4f40-a971-756c38b6b8ba}</Project>
+    <ProjectReference Include="..\Emergency.BE\Emergency.BE.csproj">
+      <Project>{a0db61a5-41e1-454e-9dc5-35ab067e1193}</Project>
       <Name>Emergency.BE</Name>
     </ProjectReference>
   </ItemGroup>
