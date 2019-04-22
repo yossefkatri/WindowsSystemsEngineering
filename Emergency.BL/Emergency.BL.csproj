@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="FactoryBL.cs" />
+    <Compile Include="IBL.cs" />
+    <Compile Include="MyBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Emergency.BE\Emergency.BE.csproj">
+      <Project>{a0db61a5-41e1-454e-9dc5-35ab067e1193}</Project>
+      <Name>Emergency.BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Emergency.DAL\Emergency.DAL.csproj">
       <Project>{c0ef86dd-412a-4393-b185-9469272938dc}</Project>
       <Name>Emergency.DAL</Name>

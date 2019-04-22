@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Emergency.BL
 {
-    public class Class1
+    class MyBL
     {
     }
 }

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Emergency.DAL
+namespace Emergency.BL
 {
-    public class Class1
+    interface IBL
     {
+       
     }
 }

@@ -70,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="model\AnalystModel.cs" />
-    <Compile Include="model\CallCentersModel.cs" />
+    <Compile Include="model\CallCenterModel.cs" />
     <Compile Include="model\ReportsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -105,6 +105,10 @@
     <ProjectReference Include="..\Emergency.BE\Emergency.BE.csproj">
       <Project>{a0db61a5-41e1-454e-9dc5-35ab067e1193}</Project>
       <Name>Emergency.BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emergency.BL\Emergency.BL.csproj">
+      <Project>{0534c60d-b688-4505-a07a-e81e62e2ad72}</Project>
+      <Name>Emergency.BL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

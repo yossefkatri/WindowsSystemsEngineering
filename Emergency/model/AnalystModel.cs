@@ -8,14 +8,14 @@ namespace Emergency.model
 {
     class AnalystModel
     {
-        public List<analyst> analysts{ get; set; }
-        public void Addanalyst(analyst analyst)
+        public analyst analyst{ get; set; }
+        public static void Addanalyst(analyst analyst)
         {
-            analysts.Add(analyst);
+            //add analyst to the list
         }
-        public void Removeanalyst(analyst analyst)
+        public static void Removeanalyst(analyst analyst)
         {
-            analysts.Remove(analyst);
+            //remove analyst to the list
         }
     }
 }
