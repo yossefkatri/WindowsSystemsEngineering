@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="FactoryDal.cs" />
     <Compile Include="IDal.cs" />
+    <Compile Include="MyDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

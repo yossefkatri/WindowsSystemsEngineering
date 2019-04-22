@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Emergency.BE;
 
-namespace Emergency.BL
+namespace Emergency.DAL
 {
-    class MyBL : IBL
+    class MyDal : IDal
     {
         public void AddAnalyst(analyst analyst)
         {
