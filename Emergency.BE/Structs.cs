@@ -19,6 +19,9 @@ namespace Emergency.BE
 
 
 
+
+
+
             this.City = string.Copy(City);
             this.Street = string.Copy(Street);
             this.NumOfHome = string.Copy(NumOfHome);
