@@ -13,6 +13,7 @@ namespace Emergency.BE
         public string NumOfHome { get; set; }
         public Address(string City, string Street, string NumOfHome)
         {
+
             this.City = string.Copy(City);
             this.Street = string.Copy(Street);
             this.NumOfHome = string.Copy(NumOfHome);
