@@ -9,7 +9,7 @@ namespace Emergency.BE
 {
     public class CallCenter: User
     {
-        public CallCenter(string familyName, string privateName, ImageSource face, int id, DateTime dOB, Gender gender, string phone):base( familyName,  privateName,  face,  id,  dOB,  gender,  phone)
+        public CallCenter(string familyName, string privateName, ImageSource face, string id, DateTime dOB, Gender gender, string phone):base( familyName,  privateName,  face,  id,  dOB,  gender,  phone)
         {
 
         }

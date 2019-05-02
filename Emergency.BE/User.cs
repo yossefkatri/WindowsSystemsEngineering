@@ -12,12 +12,12 @@ namespace Emergency.BE
         public string FamilyName { get; set; }
         public string PrivateName { get; set; }
         public ImageSource Face { get; set; }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public DateTime DOB { get; set; }
         public Gender Gender { get; set; }
         public string Phone { get; set; }
 
-        public User(string familyName, string privateName, ImageSource face, int id, DateTime dOB, Gender gender, string phone)
+        public User(string familyName, string privateName, ImageSource face, string id, DateTime dOB, Gender gender, string phone)
         {
             FamilyName = familyName;
             PrivateName = privateName;

@@ -10,7 +10,7 @@ namespace Emergency.BE
     public class analyst:User
     {
         public int HashPassword{ get; set; }
-        public analyst(string familyName, string privateName, ImageSource face, int id, DateTime dOB, Gender gender, string phone,string password) : base(familyName, privateName, face, id, dOB, gender, phone)
+        public analyst(string familyName, string privateName, ImageSource face, string id, DateTime dOB, Gender gender, string phone,string password) : base(familyName, privateName, face, id, dOB, gender, phone)
         {
             HashPassword = password.GetHashCode();
         }

@@ -12,7 +12,7 @@ namespace Emergency.BL
         public static IBL GetBL()
         {
             if (instance == null)
-                //put the current instance
+                instance = new MyBL();
             return instance;
         }
     }

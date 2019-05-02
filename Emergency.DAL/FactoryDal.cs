@@ -12,8 +12,8 @@ namespace Emergency.DAL
             static IDal instance = null;
             public static IDal getDal()
             {
-                if (instance == null)
-                   // here we put the current dal
+            if (instance == null)
+                instance = new MyDal();
                 return instance;
             }
     }

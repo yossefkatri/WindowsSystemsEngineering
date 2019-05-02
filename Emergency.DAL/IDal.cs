@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Emergency.BE;
 namespace Emergency.DAL
 {
-    interface IDal
+    public interface IDal
     {        
         //Analyst
         /// <summary>
