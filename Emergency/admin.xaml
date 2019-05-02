@@ -4,9 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Emergency"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Width="auto" Height="auto"  Background="Red">
+            <syncfusion:DropDownButtonAdv  SmallIcon="Pictures/account.png" Height="auto"   Label="Admin"  Width="auto" Background="Red" SizeMode="Normal" BorderThickness="0" HorizontalAlignment="Left">
+                <syncfusion:DropDownMenuGroup>
+                    <syncfusion:DropDownMenuItem HorizontalAlignment="Left" Header="change to call center screen"/>
+
+                    <syncfusion:DropDownMenuItem HorizontalAlignment="Left" Header="change to analyst screen"/>
+                    <syncfusion:DropDownMenuItem HorizontalAlignment="Left" Header="exit">
+                    </syncfusion:DropDownMenuItem>
+                </syncfusion:DropDownMenuGroup>
+            </syncfusion:DropDownButtonAdv>
+            <Button HorizontalAlignment="Right" Background="Red" BorderThickness="0" Margin="0,0,50,0">
+                <Image Source="Pictures/delete.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <syncfusion:TabControlExt TabScrollButtonVisibility="Auto" CloseButtonType="Hide">
+                <syncfusion:TabItemExt Header="Call Centers" MinWidth="150" MinHeight="20">
+                    <syncfusion:SfDataGrid Background="AliceBlue"/>
+                </syncfusion:TabItemExt>
+                <syncfusion:TabItemExt Header="Analysts" MinWidth="150" MinHeight="20">
+                    <syncfusion:SfDataGrid Background="Bisque"/>
+                </syncfusion:TabItemExt>
+            </syncfusion:TabControlExt>
+        </Grid>
     </Grid>
 </UserControl>
