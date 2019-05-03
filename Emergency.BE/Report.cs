@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Emergency.BE
 {
+  
    public class Report
     {
         public string NumReport { get; set; }
@@ -13,8 +14,10 @@ namespace Emergency.BE
         public DateTime Time { get; set; }
         public Address adress { get; set; }
         public int NumOfBombs { get; set; }
-        public Report(CallCenter callcanter, DateTime time, Address adress, int numOfBombs)
+        public int numOfMinutes { get; set; }
+        public Report(CallCenter callcanter, DateTime time, Address adress, int numOfBombs,int numMinutes)
         {
+            this.numOfMinutes = numMinutes;
             this.callcanter = callcanter;
             Time = time;
             this.adress = adress;

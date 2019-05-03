@@ -15,13 +15,14 @@ namespace Emergency.model
         {
             reports = new List<Report>(BL.GetReports());
         }
-        public void AddReport(CallCenter Reporting,DateTime time,Address address,int NumOfBombs)
+        public void AddReport(Emergency.BE.CallCenter Reporting,DateTime time,Address address,int NumOfBombs)
         {
             reports.Add(new Report(Reporting,time,address,NumOfBombs));
         }
         public void RemoveReport(int numReport)
         {
-            reports.RemoveAll(T=>T.NumReport==numReport);
+            reports.RemoveAll(T=>T.NumReport.CompareTo(numReport)==0);
+            
         }
     }
 }

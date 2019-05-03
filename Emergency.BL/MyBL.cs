@@ -12,33 +12,42 @@ namespace Emergency.BL
         private IDal Dal = FactoryDal.getDal();
         public void AddAnalyst(analyst analyst)
         {
-            throw new NotImplementedException();
-        }
+            CheckAnalyst(analyst);
+            Dal.AddAnalyst(analyst);
+        }//
 
         public void AddCallCenter(CallCenter callCenter)
         {
-            throw new NotImplementedException();
-        }
+            CheckCallCenter(callCenter);
+            Dal.AddCallCenter(callCenter);
+        }//
 
         public void AddReport(Report report)
         {
-            throw new NotImplementedException();
-        }
+            CheckReport(report);
+            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10)||report.numOfMinutes>-1)
+                Dal.AddReport(report);
+        }//
 
         public void DeleteAnalyst(analyst analyst)
         {
-            throw new NotImplementedException();
-        }
-
+            if (!GetAnalysts().Exists(T => T.Id == analyst.Id))
+                throw new Exception("the analyst does not exist");
+            Dal.DeleteAnalyst(analyst);
+        }//
         public void DeleteCallCenter(CallCenter callCenter)
         {
-            throw new NotImplementedException();
-        }
+            if (!GetCallCenters().Exists(T => T.Id == callCenter.Id))
+                throw new Exception("the analyst does not exist");
+            Dal.DeleteCallCenter(callCenter);
+        }//
 
         public void DeleteReport(Report report)
         {
-            throw new NotImplementedException();
-        }
+            if (!GetReports().Exists(T => T.NumReport == report.NumReport))
+                throw new Exception("the analyst does not exist");
+            Dal.DeleteReport(report);
+        }//
 
         public List<analyst> GetAnalysts()
         {
@@ -57,18 +66,28 @@ namespace Emergency.BL
 
         public void UpdateAnalyst(analyst analyst)
         {
-            throw new NotImplementedException();
-        }
+            CheckAnalyst(analyst);
+            if (!GetAnalysts().Exists(T => T.Id == analyst.Id))
+                throw new Exception("the analyst does not exist");
+            Dal.UpdateAnalyst(analyst);
+        }//
 
         public void UpdateCallCenter(CallCenter callCenter)
         {
-            throw new NotImplementedException();
-        }
+            CheckCallCenter(callCenter);
+            if (!GetCallCenters().Exists(T => T.Id == callCenter.Id))
+                throw new Exception("the analyst does not exist");
+            Dal.UpdateCallCenter(callCenter);
+        }//
 
         public void UpdateReport(Report report)
         {
-            throw new NotImplementedException();
-        }
+            CheckReport(report);
+            if (!GetReports().Exists(T => T.NumReport == report.NumReport))
+                throw new Exception("the analyst does not exist");
+            Dal.UpdateReport(report);
+
+        }//
         public static bool IdCheck(string id)
         {
             if (id == null)

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Emergency
 {
     /// <summary>
-    /// Interaction logic for admin.xaml
+    /// Interaction logic for Admin.xaml
     /// </summary>
-    public partial class admin : UserControl
+    public partial class Admin : UserControl
     {
-        public admin()
+        public Admin()
         {
             InitializeComponent();
         }
