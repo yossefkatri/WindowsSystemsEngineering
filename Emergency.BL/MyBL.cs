@@ -25,7 +25,7 @@ namespace Emergency.BL
         public void AddReport(Report report)
         {
             CheckReport(report);
-            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10)||report.numOfMinutes>-1)
+            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10)||report.numOfMinutes==-1)
                 Dal.AddReport(report);
         }//
 
