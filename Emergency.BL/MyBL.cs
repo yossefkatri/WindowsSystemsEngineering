@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Emergency.BE;
 using Emergency.DAL;
+using Emergency.BL.MapQuestAPI;
 namespace Emergency.BL
 {
     class MyBL : IBL
@@ -25,7 +26,8 @@ namespace Emergency.BL
         public void AddReport(Report report)
         {
             CheckReport(report);
-            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10)||report.numOfMinutes>-1)
+            report.coordinates=geocodingApi.ConvertToCoordinates(report.adress);
+            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10)||report.numOfMinutes==-1)
                 Dal.AddReport(report);
         }//
 
@@ -83,9 +85,11 @@ namespace Emergency.BL
         public void UpdateReport(Report report)
         {
             CheckReport(report);
+            report.coordinates = geocodingApi.ConvertToCoordinates(report.adress);
             if (!GetReports().Exists(T => T.NumReport == report.NumReport))
                 throw new Exception("the analyst does not exist");
-            Dal.UpdateReport(report);
+            if (!GetReports().Exists(T => Math.Abs((T.Time - report.Time).Minutes) < 10) || report.numOfMinutes == -1)
+                Dal.UpdateReport(report);
 
         }//
         public static bool IdCheck(string id)

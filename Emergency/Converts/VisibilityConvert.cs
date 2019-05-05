@@ -7,7 +7,7 @@ using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-namespace Emergency
+namespace Emergency.Converts
 {
     public class VisibilityConvert : IValueConverter
     {

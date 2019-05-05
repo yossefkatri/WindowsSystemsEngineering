@@ -13,6 +13,7 @@ namespace Emergency.BE
         public CallCenter callcanter { get; set; }
         public DateTime Time { get; set; }
         public Address adress { get; set; }
+        public Coordinates coordinates { get; set; }
         public int NumOfBombs { get; set; }
         public int numOfMinutes { get; set; }
         public Report(CallCenter callcanter, DateTime time, Address adress, int numOfBombs,int numMinutes)
