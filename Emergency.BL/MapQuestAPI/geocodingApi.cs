@@ -9,9 +9,9 @@ using System.Xml;
 using Emergency.BE;
 namespace Emergency.BL.MapQuestAPI
 {
-    public class geocodingApi
+    public static class geocodingApi
     {
-        public Coordinates ConvertToCoordinates(Address address)
+        public static Coordinates ConvertToCoordinates(Address address)
         {
             string key = @"aNt5BLAa2aK3uAMZoR87F25z2VlhlE3u";
             string adress=address.Street+" "+address.NumOfHome+" st. "+address.City+ " Israel";

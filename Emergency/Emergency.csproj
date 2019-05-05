@@ -213,15 +213,15 @@
     <Folder Include="view model\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\account.png" />
-    <Resource Include="Pictures\add_circle.png" />
+    <Resource Include="UC\Pictures\account.png" />
+    <Resource Include="UC\Pictures\add_circle.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\clear.png" />
-    <Resource Include="Pictures\delete.png" />
+    <Resource Include="UC\Pictures\clear.png" />
+    <Resource Include="UC\Pictures\delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\save.png" />
+    <Resource Include="UC\Pictures\save.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Emergency.BE\Emergency.BE.csproj">
