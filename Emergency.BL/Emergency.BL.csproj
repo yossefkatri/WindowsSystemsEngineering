@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="FactoryBL.cs" />
     <Compile Include="IBL.cs" />
+    <Compile Include="MapQuestAPI\DirectionsAPI.cs" />
     <Compile Include="MapQuestAPI\geocodingApi.cs" />
     <Compile Include="MyBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

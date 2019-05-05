@@ -27,7 +27,7 @@ namespace Emergency.BL
         {
             CheckReport(report);
             report.coordinates=geocodingApi.ConvertToCoordinates(report.adress);
-            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10)||report.numOfMinutes==-1)
+            if(!GetReports().Exists(T=>Math.Abs((T.Time-report.Time).Minutes)<10&&(T.adress.Equals(report.adress)))||report.numOfMinutes==-1)
                 Dal.AddReport(report);
         }//
 
@@ -88,7 +88,7 @@ namespace Emergency.BL
             report.coordinates = geocodingApi.ConvertToCoordinates(report.adress);
             if (!GetReports().Exists(T => T.NumReport == report.NumReport))
                 throw new Exception("the analyst does not exist");
-            if (!GetReports().Exists(T => Math.Abs((T.Time - report.Time).Minutes) < 10) || report.numOfMinutes == -1)
+            if (!GetReports().Exists(T => Math.Abs((T.Time - report.Time).Minutes) < 10 && (T.adress.Equals(report.adress))) || report.numOfMinutes == -1)
                 Dal.UpdateReport(report);
 
         }//

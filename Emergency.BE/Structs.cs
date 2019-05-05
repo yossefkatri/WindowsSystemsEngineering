@@ -27,7 +27,11 @@ namespace Emergency.BE
         {
             return string.Format("{0} {1} {2}", City, Street, NumOfHome);
         }
-
+        public override bool Equals(object obj)
+        {
+            Address a = (Address)obj;
+            return (City.Equals(a.City))&&(Street.Equals(a.Street))&&(NumOfHome.Equals(a.NumOfHome));
+        }
     }
     public struct Coordinates
     {
