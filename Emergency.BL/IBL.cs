@@ -73,6 +73,6 @@ namespace Emergency.BL
         /// <returns></returns>
         List<Report> GetReports();
         //another functions
-
+        IEnumerable<Coordinates> kmeans(int k, List<Report> reports, List<Coordinates> B);
     }
 }

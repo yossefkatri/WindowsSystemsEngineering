@@ -163,5 +163,62 @@ namespace Emergency.BL
             if (report.NumOfBombs < 0)
                 throw new Exception("the nember of bombs isnt correct");
         }//
+        public static double Distance(Coordinates a, Coordinates b)
+        {
+            return Math.Sqrt(Math.Pow(a.Latitude - b.Latitude, 2) + Math.Pow(a.Longitude - b.Longitude, 2));
+        }//
+        public static Coordinates averge(List<Report> reports)
+        {
+            double x = reports.Average(T=>T.coordinates.Longitude);
+            double y = reports.Average(T => T.coordinates.Latitude);
+            return new Coordinates(y,x);
+        }//
+        public IEnumerable<Coordinates> kmeans(int k, List<Report> reports,List<Coordinates> B)
+        {
+            int[] C = new int[reports.Count];
+            for(int j = 0; j < reports.Count; j++)
+            {
+                int min = 0;
+                for (int i = 0; i < B.Count; i++)
+                    if (Distance(B[i], reports[j].coordinates) < Distance(B[min], reports[j].coordinates))
+                        min = i;
+                C[j] = min;
+            }
+            bool stop=true;
+            for (int i = 0; i < B.Count; i++)
+            {
+                List<Report> rB=new List<Report>();
+                for (int j = 0; j < reports.Count; j++)
+                {
+                    if (B[i].Equals(B[C[j]]))
+                    {
+                        rB.Add(reports[j]);
+                    }
+                }
+                Coordinates excepted = averge(rB);
+                if (!B[i].Equals(excepted))
+                {
+                    B[i] = excepted;
+                    stop = false;
+                }
+            }
+            if (!stop)
+            {
+                return kmeans(k, reports, B);
+            }
+            else
+            {
+                return B; 
+            }
+        }//
+        public IEnumerable<Coordinates> kmeanStart(int k)
+        {
+            List<Coordinates> B = new List<Coordinates>();
+            for (int i = 0; i < k; i++)
+            {
+            B[i] = new Coordinates(0, i);
+            }
+            return kmeans(k,GetReports(),B);
+        }//
     }
 }
