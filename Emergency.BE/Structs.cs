@@ -29,4 +29,16 @@ namespace Emergency.BE
         }
 
     }
+    public struct Coordinates
+    {
+
+        public Coordinates(double lat, double Long) : this()
+        {
+            this.Latitude = lat;
+            this.Longitude = Long;
+        }
+
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+    }
 }
