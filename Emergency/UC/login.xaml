@@ -4,11 +4,135 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Emergency"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Background="White"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="1">
+
+            <Grid.Resources>
+                <Style x:Key="Controller_Style" TargetType="Button" >
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="BorderBrush" Value="{x:Null}"/>
+                    <!--<EventSetter Event="MouseEnter" Handler="Controller_MouseEnter"/>-->
+                    <!--<EventSetter Event="MouseLeave" Handler="Controller_MouseLeave"/>-->
+
+                    <!--<Setter Property="Content">
+                        <Setter.Value>
+                            <Style TargetType="materialDesign:PackIcon">
+                                <Setter Property="Foreground" Value="WhiteSmoke"/>
+                                <Setter Property="Width" Value="25"/>
+                                <Setter Property="Height" Value="25"/>
+                                <Setter Property="Margin" Value="0"/>
+                            </Style>
+                        </Setter.Value>
+                    </Setter>-->
+                    <Style.Resources>
+                        <Style TargetType="materialDesign:PackIcon">
+                            <Setter Property="Foreground" Value="WhiteSmoke"/>
+                            <Setter Property="Width" Value="25"/>
+                            <Setter Property="Height" Value="25"/>
+                            <Setter Property="Margin" Value="0"/>
+
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Button, AncestorLevel=1},Path=IsMouseOver}" Value="True">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Style.Resources>
+
+                </Style>
+                <!-- <local:HelperPassword x:Key="helperPassword" x:Name="helperPassword" Password="{Binding ElementName=passwordPasswordBox, Path=Password, Mode=OneWay}"/>-->
+
+            </Grid.Resources>
+
+            <Rectangle Height="280" VerticalAlignment="Top">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD15E22"/>
+                        <GradientStop Color="#FFB98E1D" Offset="1"/>
+                        <GradientStop Color="#FFD59914" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Image Source="Pictures/account.png" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="126,10,124,0"/>
+
+            <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="35,0,35,71.2" RadiusY="12.811" RadiusX="12.811" >
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
+                </Rectangle.Effect>
+            </Rectangle>
+
+            <Grid Width="280" Height="240" VerticalAlignment="Bottom" Margin="0,100">
+                <TextBlock Text="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="116,32,111,0" Foreground="Gray" FontSize="18" />
+                <StackPanel VerticalAlignment="Center" Margin="10">
+                    <TextBox x:Name="idTextBox" Foreground="Red" materialDesign:HintAssist.Hint="ID" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,10" FontFamily="Imprint MT Shadow" FontSize="18" />
+                    <PasswordBox  x:Name="passwordTextBox" Foreground="Red" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Imprint MT Shadow" FontSize="18" />
+                    <TextBlock x:Name="warnning" Foreground="Red" />
+                </StackPanel>
+            </Grid>
+
+            <Button VerticalAlignment="Bottom" Margin="96,0,104,100.2" Width="150" Content="LOG IN" HorizontalAlignment="Center">
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Style.Triggers>
+                            <!--<DataTrigger Binding="{Binding ElementName=idTextBox, Path=Text}" Value="{x:Static System:String.Empty}">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>-->
+                            <!--<DataTrigger Binding="{Binding Source={StaticResource helperPassword}, Path=Password}" Value="{x:Static System:String.Empty}">-->
+                            <!--<DataTrigger x:Name="dt" Binding="{Binding ElementName=helperPassword, Path=Password}" Value="{x:Static System:String.Empty}">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>-->
+                            <!--<MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=idTextBox, Path=Text}" Value=""/>
+                                <Condition Binding="{Binding ElementName=passwordPasswordBox, Path=Password}" Value=""/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Button.IsEnabled" Value="False"/>
+                        </MultiDataTrigger>-->
+                        </Style.Triggers>
+                        <!--<Setter Property="IsEnabled" Value="True"/>-->
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <!--<TextBlock Text="Forgot password?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20" Foreground="Gray" Cursor="Hand"/>-->
+            <TextBlock Text="Don't have a user?" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="50" Foreground="Gray" Cursor="Hand"/>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                <Button Name="Minimize_Button" Style="{StaticResource Controller_Style}">
+                    <materialDesign:PackIcon Name="Minimize_Icon" Kind="WindowMinimize"/>
+                </Button>
+                <Button Name="Shutdown_Button"  Style="{StaticResource Controller_Style}">
+                    <materialDesign:PackIcon Name="Shutdown_Icon" Kind="Power"/>
+                </Button>
+            </StackPanel>
+            <StackPanel Visibility="Hidden" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button Name="Languages_Button"  Style="{StaticResource Controller_Style}">
+                    <materialDesign:PackIcon Name="Languages_Icon" />
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <RichTextBox Grid.Column="0">
+            <FlowDocument>
+                <Paragraph FontSize="30" TextAlignment="Center" FontFamily="Calibri">Welcome to the new system for event occurrence</Paragraph>
+                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="18">In times of emergency, many messages are received at call centers from civilians who claim that an incident occurred in their vicinity such as a missile falling, but the reports are not always able to accurately indicate the location of the event.</Paragraph>
+                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="18">In this project we will refer to the incoming message collection and try to evaluate the locations of the events using cluster analysis, after finding the correct coordinates. GeoTagging Exploring and finding the real fall place We will use the overall place shots and evaluate the quality of the analysis by estimating the actual fall</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Image Grid.Column="0"  Opacity="0.5" Source="Pictures/tilim.PNG" />
     </Grid>
 </UserControl>

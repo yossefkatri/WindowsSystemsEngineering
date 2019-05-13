@@ -17,13 +17,16 @@ namespace Emergency.BE
         public FileStyleUriParser Picture { get; set; }
         public int NumOfBombs { get; set; }
         public int numOfMinutes { get; set; }
-        public Report(CallCenter callcanter, DateTime time, Address adress, int numOfBombs,int numMinutes)
+        public Report(CallCenter callcanter, DateTime time, Address adress, int numOfBombs,int numMinutes,FileStyleUriParser p,Coordinates coordinates,string num)
         {
+            this.NumReport = num;
+            this.coordinates = coordinates;
             this.numOfMinutes = numMinutes;
             this.callcanter = callcanter;
-            Time = time;
+            this.Time = time;
             this.adress = adress;
-            NumOfBombs = numOfBombs;
+            this.NumOfBombs = numOfBombs;
+            this.Picture = p;
         }
     }
 }

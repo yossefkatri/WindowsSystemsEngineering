@@ -5,55 +5,54 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Emergency"
              xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="Emergency.Anlist"
+            Background="White"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Background="Red">
+            <syncfusion:DropDownButtonAdv  SmallIcon="Pictures/account.png" Height="auto"   Label="name analyst"  Width="auto" Background="Red" SizeMode="Normal" BorderThickness="0" HorizontalAlignment="Left" DropDirection="BottomLeft">
+                <syncfusion:DropDownMenuGroup>
+                    <syncfusion:DropDownMenuItem HorizontalAlignment="Left" Header="profile">
+                    </syncfusion:DropDownMenuItem>
+                    <syncfusion:DropDownMenuItem HorizontalAlignment="Left" Header="exit">
+                    </syncfusion:DropDownMenuItem>
+                </syncfusion:DropDownMenuGroup>
+            </syncfusion:DropDownButtonAdv>
 
-        <!--<syncfusion:SfMap>
+            <Button HorizontalAlignment="Right" Background="Red" BorderThickness="0" Margin="0,0,50,0">
+                <Image Source="Pictures/add_circle.png"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
 
-            <syncfusion:SfMap.Layers>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
 
-                <syncfusion:ImageryLayer LayerType="OSM" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ScrollViewer Grid.Column="1" Grid.Row="0" >
+                <syncfusion:SfDataGrid Name="s" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding}" >
+                </syncfusion:SfDataGrid>
+            </ScrollViewer>
+            <syncfusion:SfMap  EnablePan="True" Grid.Column="0" Grid.Row="0" ZoomLevel="4" MinZoom="1" MaxZoom="20" EnableZoom="True" >
 
-            </syncfusion:SfMap.Layers>
+                <syncfusion:SfMap.Layers >
 
-        </syncfusion:SfMap >-->
+                    <syncfusion:ImageryLayer LayerType="OSM" />
 
-        <ListView Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-            <ListBox Height="191" Width="52"/>
-        </ListView>
-        <syncfusion:SfColumnSparkline HorizontalAlignment="Stretch"  Grid.Row="1" Grid.Column="0"  VerticalAlignment="Stretch"/>
-        <syncfusion:SfColumnSparkline ItemsSource="{Binding UsersList}" YBindingPath="no of users" >
+                </syncfusion:SfMap.Layers>
 
-        </syncfusion:SfColumnSparkline>
-        <syncfusion:SfHeatMap Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" />
-        <syncfusion:SfMap>
-
-            <syncfusion:SfMap.Layers>
-
-                <syncfusion:ImageryLayer LayerType="OSM" />
-
-            </syncfusion:SfMap.Layers>
-
-        </syncfusion:SfMap >
-
-
-
-
+            </syncfusion:SfMap >
+            <Image Grid.Column="1" Grid.Row="1"/>
+            <syncfusion:AreaSeries XBindingPath="FruitName" Interior="#BCBCBC" YBindingPath="People" ItemsSource="{Binding Fruits}" Grid.Column="0" Grid.Row="1"/>
+        </Grid>
     </Grid>
 </UserControl>

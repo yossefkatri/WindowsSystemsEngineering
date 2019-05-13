@@ -74,5 +74,6 @@ namespace Emergency.BL
         List<Report> GetReports();
         //another functions
         IEnumerable<Coordinates> kmeans(int k, List<Report> reports, List<Coordinates> B);
+        IEnumerable<Coordinates> kmeanStart(int k);
     }
 }

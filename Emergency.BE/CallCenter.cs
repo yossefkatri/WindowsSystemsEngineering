@@ -9,9 +9,10 @@ namespace Emergency.BE
 {
     public class CallCenter: User
     {
-        public CallCenter(string familyName, string privateName, FileStyleUriParser face, string id, DateTime dOB, Gender gender, string phone):base( familyName,  privateName,  face,  id,  dOB,  gender,  phone)
+        public int HashPassword { get; set; }
+        public CallCenter(string familyName, string privateName, FileStyleUriParser face, string id, DateTime dOB, Gender gender, string phone,string password):base( familyName,  privateName,  face,  id,  dOB,  gender,  phone)
         {
-
+            HashPassword = password.GetHashCode();
         }
     }
 

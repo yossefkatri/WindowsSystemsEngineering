@@ -9,13 +9,13 @@ namespace Emergency.BE
 {
       public class User
     {
-        public string FamilyName { get; set; }
-        public string PrivateName { get; set; }
+        public string FamilyName { get; set; }//
+        public string PrivateName { get; set; }//
         public FileStyleUriParser Face { get; set; }
-        public string Id { get; set; }
-        public DateTime DOB { get; set; }
-        public Gender Gender { get; set; }
-        public string Phone { get; set; }
+        public string Id { get; set; }//
+        public DateTime DOB { get; set; }//
+        public Gender Gender { get; set; }//
+        public string Phone { get; set; }//
 
         public User(string familyName, string privateName, FileStyleUriParser face, string id, DateTime dOB, Gender gender, string phone)
         {

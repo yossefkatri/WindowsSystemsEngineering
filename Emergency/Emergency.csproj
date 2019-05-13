@@ -54,6 +54,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignXaml.DialogsHelper.1.0.2\lib\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.1.1101, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignXaml.DialogsHelper.1.0.2\lib\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignXaml.DialogsHelper, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignXaml.DialogsHelper.1.0.2\lib\MaterialDesignXaml.DialogsHelper.dll</HintPath>
+    </Reference>
     <Reference Include="ReachFramework" />
     <Reference Include="Syncfusion.Calculate.Base, Version=17.1460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Chart.Wpf, Version=17.1460.0.38, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -158,6 +167,9 @@
     <Compile Include="UC\Admin.xaml.cs">
       <DependentUpon>Admin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UC\analystsignup.xaml.cs">
+      <DependentUpon>analystsignup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC\Anlist.xaml.cs">
       <DependentUpon>Anlist.xaml</DependentUpon>
     </Compile>
@@ -165,10 +177,17 @@
       <DependentUpon>CallCenter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converts\VisibilityConvert.cs" />
+    <Compile Include="UC\callcentersignup.xaml.cs">
+      <DependentUpon>callcentersignup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC\login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>
     <Page Include="UC\Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UC\analystsignup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +211,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UC\callcentersignup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC\login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +241,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -262,6 +286,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UC\Pictures\account3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
