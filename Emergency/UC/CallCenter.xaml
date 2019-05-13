@@ -8,6 +8,7 @@
              xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib"
              xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
              mc:Ignorable="d" 
+             Background="White"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <converts:VisibilityConvert x:Key="convert"/>
@@ -27,9 +28,10 @@
                 </syncfusion:DropDownMenuGroup>
             </syncfusion:DropDownButtonAdv>
 
-            <Button HorizontalAlignment="Right" Background="Red" BorderThickness="0" Margin="0,0,50,0">
-                <Image Source="Pictures/add_circle.png"/>
-            </Button>
+            
+            
+                <Image Source="Pictures/add_circle.png" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+            
         </Grid>
         <syncfusion:SfDataGrid  HorizontalAlignment="Stretch"  Grid.Row="1" VerticalAlignment="Stretch"/>
         <Grid Grid.Row="1">
@@ -125,12 +127,10 @@
                     <ColumnDefinition Width="50*"/>
                     <ColumnDefinition Width="50*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Background="AliceBlue" Height="50" Width="50" BorderThickness="0">
-                    <Image Source="Pictures/delete.png" />
-                </Button>
-                <Button Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Background="AliceBlue" Height="50" Width="50" BorderThickness="0">
-                    <Image Source="Pictures/save.png"/>
-                </Button>
+                
+                    <Image Grid.Column="0" Source="Pictures/delete.png" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="50" Width="50" />
+
+                <Image Grid.Column="1" Source="Pictures/save.png" Cursor="Hand" VerticalAlignment="Center" HorizontalAlignment="Center"  Height="50" Width="50"  />
             </Grid>
 
         </Grid>

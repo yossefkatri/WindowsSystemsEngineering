@@ -23,9 +23,8 @@
                 </syncfusion:DropDownMenuGroup>
             </syncfusion:DropDownButtonAdv>
 
-            <Button HorizontalAlignment="Right" Background="Red" BorderThickness="0" Margin="0,0,50,0">
-                <Image Source="Pictures/add_circle.png"/>
-            </Button>
+            <Image Source="Pictures/add_circle.png" Cursor="Hand" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+
         </Grid>
         <Grid Grid.Row="1">
 
