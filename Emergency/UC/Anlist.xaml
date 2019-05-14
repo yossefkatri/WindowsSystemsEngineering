@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Emergency"
-             xmlns:syncfusion="http://schemas.syncfusion.com/wpf" x:Class="Emergency.Anlist"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+    xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib" x:Class="Emergency.Anlist"
             Background="White"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -50,6 +51,14 @@
                 </syncfusion:SfMap.Layers>
 
             </syncfusion:SfMap >
+            <StackPanel Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal">
+                <TextBlock Text="number of  Clusters:" Foreground="Red"/>
+                <syncfusion:UpDown  Value="0" Step="1"  Width="30" Height="20" >
+                <syncfusion:UpDown.NumberFormatInfo>
+                    <globalization:NumberFormatInfo  NumberDecimalDigits="0"/>
+                </syncfusion:UpDown.NumberFormatInfo>
+            </syncfusion:UpDown>
+            </StackPanel>
             <Image Grid.Column="1" Grid.Row="1"/>
             <syncfusion:AreaSeries XBindingPath="FruitName" Interior="#BCBCBC" YBindingPath="People" ItemsSource="{Binding Fruits}" Grid.Column="0" Grid.Row="1"/>
         </Grid>
