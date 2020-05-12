@@ -14,6 +14,8 @@ namespace Emergency.model
         public static void Addanalyst(analyst analyst)
         {
             //add analyst to the list
+
+
         }
         public static void Removeanalyst(analyst analyst)
         {
